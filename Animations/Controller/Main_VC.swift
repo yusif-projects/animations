@@ -33,7 +33,7 @@ class Main_VC: UIViewController {
         box.center.x = distance_form_bounds + box.frame.width/2
         box.center.y = distance_form_bounds + box.frame.height/2
         
-        duration = 1
+        duration = 0.3
         
         up_button.setTitleColor(UIColor.green, for: .normal)
         down_button.setTitleColor(UIColor.green, for: .normal)
