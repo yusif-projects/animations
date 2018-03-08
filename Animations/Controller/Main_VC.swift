@@ -7,6 +7,8 @@ class Main_VC: UIViewController {
     
     @IBOutlet weak var box: UIView!
     
+    var duration: Double!
+    
     var is_on_the_left: Bool!
     var is_on_the_right: Bool!
     var is_above: Bool!
@@ -14,6 +16,8 @@ class Main_VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        duration = 0.5
         
         is_on_the_left = true
         is_on_the_right = false
@@ -54,18 +58,26 @@ class Main_VC: UIViewController {
     }
     
     @IBAction func go_right_pressed(_ sender: Any) {
-        go_right(box: box)
+        UIView.animate(withDuration: self.duration) {
+            self.go_right(box: self.box)
+        }
     }
     
     @IBAction func go_left_pressed(_ sender: Any) {
-        go_left(box: box)
+        UIView.animate(withDuration: self.duration) {
+            self.go_left(box: self.box)
+        }
     }
     
     @IBAction func go_up_pressed(_ sender: Any) {
-        go_up(box: box)
+        UIView.animate(withDuration: self.duration) {
+            self.go_up(box: self.box)
+        }
     }
     
     @IBAction func go_down_pressed(_ sender: Any) {
-        go_down(box: box)
+        UIView.animate(withDuration: self.duration) {
+            self.go_down(box: self.box)
+        }
     }
 }
