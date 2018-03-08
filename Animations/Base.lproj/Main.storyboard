@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -36,22 +41,32 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-2n-4l3">
-                                            <rect key="frame" x="124" y="237.5" width="127" height="192"/>
+                                            <rect key="frame" x="148" y="231.5" width="79" height="204"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W23-Bd-F5p">
-                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="48"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                    <state key="normal" title="Go Right">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="51"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <state key="normal" title="Right">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="go_right_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GM-dA-t2w"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-oe-QUY">
+                                                    <rect key="frame" x="0.0" y="51" width="79" height="51"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <state key="normal" title="Down">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="go_down_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83y-ji-Wkl"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-IM-vKU">
-                                                    <rect key="frame" x="0.0" y="48" width="127" height="48"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                    <state key="normal" title="Go Left">
+                                                    <rect key="frame" x="0.0" y="102" width="79" height="51"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <state key="normal" title="Left">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -59,23 +74,13 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ka-jv-Hze">
-                                                    <rect key="frame" x="0.0" y="96" width="127" height="48"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                    <state key="normal" title="Go Up">
+                                                    <rect key="frame" x="0.0" y="153" width="79" height="51"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <state key="normal" title="Up">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="go_up_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9T-kQ-cEa"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-oe-QUY">
-                                                    <rect key="frame" x="0.0" y="144" width="127" height="48"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                    <state key="normal" title="Go Down">
-                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="go_down_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83y-ji-Wkl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -106,6 +111,10 @@
                     </view>
                     <connections>
                         <outlet property="box" destination="AR7-yX-wCm" id="5IB-cw-ZHY"/>
+                        <outlet property="down_button" destination="2zi-oe-QUY" id="U9B-3I-0Rm"/>
+                        <outlet property="left_button" destination="3Z6-IM-vKU" id="D4O-fn-nJt"/>
+                        <outlet property="right_button" destination="W23-Bd-F5p" id="SJm-Jb-5tm"/>
+                        <outlet property="up_button" destination="0ka-jv-Hze" id="fBy-xU-skN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
