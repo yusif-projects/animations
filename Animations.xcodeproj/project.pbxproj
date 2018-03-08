@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D49BA0642050CCCA007D625B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49BA0632050CCCA007D625B /* AppDelegate.swift */; };
-		D49BA0662050CCCA007D625B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49BA0652050CCCA007D625B /* ViewController.swift */; };
+		D49BA0662050CCCA007D625B /* Main_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49BA0652050CCCA007D625B /* Main_VC.swift */; };
 		D49BA0692050CCCA007D625B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49BA0672050CCCA007D625B /* Main.storyboard */; };
 		D49BA06B2050CCCA007D625B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49BA06A2050CCCA007D625B /* Assets.xcassets */; };
 		D49BA06E2050CCCA007D625B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D49BA06C2050CCCA007D625B /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		D49BA0602050CCCA007D625B /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49BA0632050CCCA007D625B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D49BA0652050CCCA007D625B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D49BA0652050CCCA007D625B /* Main_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_VC.swift; sourceTree = "<group>"; };
 		D49BA0682050CCCA007D625B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D49BA06A2050CCCA007D625B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D49BA06D2050CCCA007D625B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,46 @@
 		D49BA0622050CCCA007D625B /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				D49BA0782050CD31007D625B /* Model */,
+				D49BA0772050CD2F007D625B /* View */,
+				D49BA0762050CD2D007D625B /* Controller */,
+				D49BA0752050CD2B007D625B /* Resources */,
 				D49BA0632050CCCA007D625B /* AppDelegate.swift */,
-				D49BA0652050CCCA007D625B /* ViewController.swift */,
 				D49BA0672050CCCA007D625B /* Main.storyboard */,
-				D49BA06A2050CCCA007D625B /* Assets.xcassets */,
 				D49BA06C2050CCCA007D625B /* LaunchScreen.storyboard */,
-				D49BA06F2050CCCA007D625B /* Info.plist */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		D49BA0752050CD2B007D625B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D49BA06A2050CCCA007D625B /* Assets.xcassets */,
+				D49BA06F2050CCCA007D625B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D49BA0762050CD2D007D625B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D49BA0652050CCCA007D625B /* Main_VC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D49BA0772050CD2F007D625B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D49BA0782050CD31007D625B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D49BA0662050CCCA007D625B /* ViewController.swift in Sources */,
+				D49BA0662050CCCA007D625B /* Main_VC.swift in Sources */,
 				D49BA0642050CCCA007D625B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,12 +308,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7NM5JA8Q5L;
-				INFOPLIST_FILE = Animations/Info.plist;
+				INFOPLIST_FILE = Animations/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yusif-the-ios-developer.Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -291,12 +323,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7NM5JA8Q5L;
-				INFOPLIST_FILE = Animations/Info.plist;
+				INFOPLIST_FILE = Animations/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yusif-the-ios-developer.Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
