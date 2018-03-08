@@ -26,6 +26,67 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w8L-hb-DtI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-yX-wCm">
+                                            <rect key="frame" x="50" y="50" width="50" height="50"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="2QR-4j-EbQ"/>
+                                                <constraint firstAttribute="width" constant="50" id="Y2I-Q9-31a"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-2n-4l3">
+                                            <rect key="frame" x="124" y="237.5" width="127" height="192"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W23-Bd-F5p">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <state key="normal" title="Go Right">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="go_right_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GM-dA-t2w"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-IM-vKU">
+                                                    <rect key="frame" x="0.0" y="48" width="127" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <state key="normal" title="Go Left">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="go_left_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cc4-g2-Ufc"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ka-jv-Hze">
+                                                    <rect key="frame" x="0.0" y="96" width="127" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <state key="normal" title="Go Up">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="go_up_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9T-kQ-cEa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-oe-QUY">
+                                                    <rect key="frame" x="0.0" y="144" width="127" height="48"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <state key="normal" title="Go Down">
+                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="go_down_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83y-ji-Wkl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="top" secondItem="w8L-hb-DtI" secondAttribute="top" constant="50" id="F9K-I3-pwh"/>
+                                        <constraint firstItem="W9S-2n-4l3" firstAttribute="centerX" secondItem="w8L-hb-DtI" secondAttribute="centerX" id="WvE-6g-XC6"/>
+                                        <constraint firstItem="W9S-2n-4l3" firstAttribute="centerY" secondItem="w8L-hb-DtI" secondAttribute="centerY" id="ZZt-kI-c7q"/>
+                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="leading" secondItem="w8L-hb-DtI" secondAttribute="leading" constant="50" id="vva-Pp-gVU"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -43,6 +104,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="box" destination="AR7-yX-wCm" id="5IB-cw-ZHY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
