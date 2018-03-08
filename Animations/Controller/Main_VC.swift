@@ -5,12 +5,18 @@ import UIKit
 
 class Main_VC: UIViewController {
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @IBOutlet weak var box: UIView!
     
     @IBOutlet weak var right_button: UIButton!
     @IBOutlet weak var down_button: UIButton!
     @IBOutlet weak var left_button: UIButton!
     @IBOutlet weak var up_button: UIButton!
+    
+    var distance_form_bounds: CGFloat!
     
     var duration: Double!
     
@@ -22,7 +28,12 @@ class Main_VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        duration = 0.5
+        distance_form_bounds = 10
+        
+        box.center.x = distance_form_bounds + box.frame.width/2
+        box.center.y = distance_form_bounds + box.frame.height/2
+        
+        duration = 1
         
         up_button.setTitleColor(UIColor.green, for: .normal)
         down_button.setTitleColor(UIColor.green, for: .normal)
@@ -73,28 +84,28 @@ class Main_VC: UIViewController {
     
     func go_right(box: UIView){
         if self.is_on_the_right == false {
-            box.center.x = box.center.x - 50 - box.frame.width*2 + self.view.frame.width
+            box.center.x = box.center.x - 2*(distance_form_bounds + box.frame.width/2) + self.view.frame.width
             check_position(input: "GO-RIGHT")
         }
     }
     
     func go_left(box: UIView){
         if self.is_on_the_left == false {
-            box.center.x = box.center.x + 100 + box.frame.width - self.view.frame.width
+            box.center.x = box.center.x + 2*(distance_form_bounds + box.frame.width/2) - self.view.frame.width
             check_position(input: "GO-LEFT")
         }
     }
     
     func go_up (box: UIView){
         if self.is_above == false {
-            box.center.y = box.center.y + 100 + box.frame.height - self.view.frame.height
+            box.center.y = box.center.y + 2*(distance_form_bounds + box.frame.height/2) - self.view.frame.height
             check_position(input: "GO-UP")
         }
     }
     
     func go_down(box: UIView){
         if self.is_below == false {
-            box.center.y = box.center.y - 50 - box.frame.height*2 + self.view.frame.height
+            box.center.y = box.center.y - 2*(distance_form_bounds + box.frame.height/2) + self.view.frame.height
             check_position(input: "GO-DOWN")
         }
     }

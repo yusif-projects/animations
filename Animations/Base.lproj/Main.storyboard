@@ -33,11 +33,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-yX-wCm">
-                                            <rect key="frame" x="50" y="50" width="50" height="50"/>
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="2QR-4j-EbQ"/>
-                                                <constraint firstAttribute="width" constant="50" id="Y2I-Q9-31a"/>
+                                                <constraint firstAttribute="height" constant="100" id="2QR-4j-EbQ"/>
+                                                <constraint firstAttribute="width" constant="100" id="Y2I-Q9-31a"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-2n-4l3">
@@ -87,10 +87,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="top" secondItem="w8L-hb-DtI" secondAttribute="top" constant="50" id="F9K-I3-pwh"/>
+                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="leading" secondItem="w8L-hb-DtI" secondAttribute="leading" constant="10" id="BmM-34-E2i"/>
                                         <constraint firstItem="W9S-2n-4l3" firstAttribute="centerX" secondItem="w8L-hb-DtI" secondAttribute="centerX" id="WvE-6g-XC6"/>
                                         <constraint firstItem="W9S-2n-4l3" firstAttribute="centerY" secondItem="w8L-hb-DtI" secondAttribute="centerY" id="ZZt-kI-c7q"/>
-                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="leading" secondItem="w8L-hb-DtI" secondAttribute="leading" constant="50" id="vva-Pp-gVU"/>
+                                        <constraint firstItem="AR7-yX-wCm" firstAttribute="top" secondItem="w8L-hb-DtI" secondAttribute="top" constant="10" id="xvY-My-gXN"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
