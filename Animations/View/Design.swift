@@ -5,6 +5,7 @@ import UIKit
 
 @IBDesignable
 class Design: UIView {
+    
     @IBInspectable
     var corner_radius: CGFloat = 0 {
         didSet {
