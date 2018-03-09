@@ -15,6 +15,10 @@ class Main_VC: UIViewController {
     @IBOutlet weak var down_button: UIButton!
     @IBOutlet weak var left_button: UIButton!
     @IBOutlet weak var up_button: UIButton!
+    @IBOutlet weak var right_left_button: UIButton!
+    @IBOutlet weak var down_up_button: UIButton!
+    @IBOutlet weak var left_right_button: UIButton!
+    @IBOutlet weak var up_down_button: UIButton!
     
     var distance_form_bounds: CGFloat!
     
@@ -45,7 +49,18 @@ class Main_VC: UIViewController {
         left_button.setTitleColor(UIColor.red, for: .disabled)
         right_button.setTitleColor(UIColor.red, for: .disabled)
         
+        up_down_button.setTitleColor(UIColor.green, for: .normal)
+        down_up_button.setTitleColor(UIColor.green, for: .normal)
+        left_right_button.setTitleColor(UIColor.green, for: .normal)
+        right_left_button.setTitleColor(UIColor.green, for: .normal)
+        
+        up_down_button.setTitleColor(UIColor.red, for: .disabled)
+        down_up_button.setTitleColor(UIColor.red, for: .disabled)
+        left_right_button.setTitleColor(UIColor.red, for: .disabled)
+        right_left_button.setTitleColor(UIColor.red, for: .disabled)
+        
         check_position(input: "DEFAULT")
+        check_returning_ones()
     }
     
     func check_position(input: String){
@@ -82,10 +97,34 @@ class Main_VC: UIViewController {
         }
     }
     
+    func check_returning_ones(){
+        if right_button.isEnabled {
+            right_left_button.isEnabled = true
+        }else{
+            right_left_button.isEnabled = false
+        }
+        if left_button.isEnabled {
+            left_right_button.isEnabled = true
+        }else{
+            left_right_button.isEnabled = false
+        }
+        if up_button.isEnabled {
+            up_down_button.isEnabled = true
+        }else{
+            up_down_button.isEnabled = false
+        }
+        if down_button.isEnabled {
+            down_up_button.isEnabled = true
+        }else{
+            down_up_button.isEnabled = false
+        }
+    }
+    
     func go_right(box: UIView){
         if self.is_on_the_right == false {
             box.center.x = box.center.x - 2*(distance_form_bounds + box.frame.width/2) + self.view.frame.width
             check_position(input: "GO-RIGHT")
+            check_returning_ones()
         }
     }
     
@@ -93,6 +132,7 @@ class Main_VC: UIViewController {
         if self.is_on_the_left == false {
             box.center.x = box.center.x + 2*(distance_form_bounds + box.frame.width/2) - self.view.frame.width
             check_position(input: "GO-LEFT")
+            check_returning_ones()
         }
     }
     
@@ -100,6 +140,7 @@ class Main_VC: UIViewController {
         if self.is_above == false {
             box.center.y = box.center.y + 2*(distance_form_bounds + box.frame.height/2) - self.view.frame.height
             check_position(input: "GO-UP")
+            check_returning_ones()
         }
     }
     
@@ -107,6 +148,7 @@ class Main_VC: UIViewController {
         if self.is_below == false {
             box.center.y = box.center.y - 2*(distance_form_bounds + box.frame.height/2) + self.view.frame.height
             check_position(input: "GO-DOWN")
+            check_returning_ones()
         }
     }
     
@@ -131,6 +173,54 @@ class Main_VC: UIViewController {
     @IBAction func go_down_pressed(_ sender: Any) {
         UIView.animate(withDuration: self.duration) {
             self.go_down(box: self.box)
+        }
+    }
+    
+    @IBAction func go_right_left_pressed(_ sender: Any) {
+        UIView.animate(withDuration: self.duration, animations: {
+            self.go_right(box: self.box)
+        }) { (finished) in
+            if finished {
+                UIView.animate(withDuration: self.duration) {
+                    self.go_left(box: self.box)
+                }
+            }
+        }
+    }
+    
+    @IBAction func go_left_right_pressed(_ sender: Any) {
+        UIView.animate(withDuration: self.duration, animations: {
+            self.go_left(box: self.box)
+        }) { (finished) in
+            if finished {
+                UIView.animate(withDuration: self.duration) {
+                    self.go_right(box: self.box)
+                }
+            }
+        }
+    }
+    
+    @IBAction func go_up_down_pressed(_ sender: Any) {
+        UIView.animate(withDuration: self.duration, animations: {
+            self.go_up(box: self.box)
+        }) { (finished) in
+            if finished {
+                UIView.animate(withDuration: self.duration) {
+                    self.go_down(box: self.box)
+                }
+            }
+        }
+    }
+    
+    @IBAction func go_down_up_pressed(_ sender: Any) {
+        UIView.animate(withDuration: self.duration, animations: {
+            self.go_down(box: self.box)
+        }) { (finished) in
+            if finished {
+                UIView.animate(withDuration: self.duration) {
+                    self.go_up(box: self.box)
+                }
+            }
         }
     }
 }
